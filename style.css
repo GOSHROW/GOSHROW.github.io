@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	overflow: hidden;
+    background-image: linear-gradient( to right, black, rgb(135, 20, 170), rgb(145, 24, 216), rgb(135, 20, 170), black);
+	overflow-x: hidden;
+	overflow-y: hidden;
+	animation: shiftingBG 10s infinite;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+}
+@keyframes shiftingBG{	
+0%		{ background-image:  linear-gradient( to right, black, rgb(135, 20, 170), rgb(145, 24, 216), rgb(135, 20, 170), black);;}
+15%		{ background-image:  linear-gradient( to right, black, rgb(115, 16, 140), rgb(135, 20, 170), rgb(115, 16, 140), black);;}
+30%		{ background-image:  linear-gradient( to right, black, rgb(95, 10, 90), rgb(115, 16, 140), rgb(95, 10, 90), black);;}
+45%		{ background-image:  linear-gradient( to right, black, rgb(75, 13, 70), rgb(95, 10, 90), rgb(75, 13, 70), black);;}
+60%		{ background-image:  linear-gradient( to right, black, rgb(40, 8, 30), rgb(75, 13, 70), rgb(40, 8, 30), black);;}
+75%		{ background-image:  linear-gradient( to right, black, rgb(20, 3, 20), rgb(40, 8, 30), rgb(20, 3, 20), black);;}
+100%		{ background-image:  linear-gradient( to right, black, rgb(135, 20, 170), rgb(145, 24, 216), rgb(135, 20, 170), black);;}
+95%		{ background-image:  linear-gradient( to right, black, rgb(115, 16, 140), rgb(135, 20, 170), rgb(115, 16, 140), black);;}
+90%		{ background-image:  linear-gradient( to right, black, rgb(95, 10, 90), rgb(115, 16, 140), rgb(95, 10, 90), black);;}
+85%		{ background-image:  linear-gradient( to right, black, rgb(75, 13, 70), rgb(95, 10, 90), rgb(75, 13, 70), black);;}
+80%		{ background-image:  linear-gradient( to right, black, rgb(20, 3, 20), rgb(40, 8, 30), rgb(20, 3, 20), black);;}}
+
+.container {
+	min-width: 150px;
+    min-height: 125px;
+    width: 350px;
+    height: 250px;
+	border-radius: 20px;
+	position: fixed;
+	-webkit-transition: 1.5s ease-in-out;
+	transition: 1.5s ease-in-out;
+	transform-style: preserve-3d;
+    z-index: 100;
+    display: block;
+    top: 25%;
+    left: calc(50% - 175px);
+    /* transform: translate(-50%, -50%); */
+}
+
+.side {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	padding: 20px 50px;
+	color: #fff;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	border-radius: 20px;
+}
+.content {
+	transform: translatez(70px) scale(1.0);
+	line-height: 1.5em;
+	color: rgb(140, 42, 165);
+	font-family: monospace;
+}
+.content h1 {
+	position: relative;
+	font-family: ''Share Tech Mono'', monospace;
+}
+.content p {
+	margin-top: 50px;
+	line-height: 0em;
+	font-size: larger;
+}
+.content h1:before {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	height: 3px;
+	background-color: orange;
+	width: 70px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.front {
+	z-index: 1000;
+	background-size: 100%;
+	background-size: cover;
+	background-image: url("./assets/texture-front.jpg");
+	color: blueviolet;
+}
+.back {
+	background-color: #333;
+	transform: rotateY(180deg);
+	z-index: 1000;
+	background-image: url("./assets/texture-back.jpg");
+}
+
+.container:hover {
+	-webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+#particles-js {
+    height: 100vh;
+	z-index: -1000;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+	height: 100px;
+	left: calc(30px);
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+	bottom: 0;
+	background: black;
+	/* background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); */
+    z-index: 1000;
+} 
+
+.gif {
+	position: fixed;
+	-webkit-transition: 1.5s ease-in-out;
+	transition: 1.5s ease-in-out;
+	transform-style: preserve-3d;
+	z-index: 2000;
+    display: block;
+    top: calc(50% - 45px);
+	left: calc(50% - 150px);
+	opacity: 1;
+}
+
+.blink-bg{
+	color: #fff;
+	display: inline-block;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	animation: blinkingBackground 1s infinite;
+}
+@keyframes blinkingBackground{
+	0%		{ background-image:  linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);;}
+	25%		{ background-image:  linear-gradient(90deg, rgba(131,58,180,0.3) 0%, rgba(253,29,29,0.7) 50%, rgba(252,176,69,0.6) 100%);;}
+	50%		{ background-image:  linear-gradient(90deg, rgba(131,58,180,0.1) 0%, rgba(253,29,29,0.65) 50%, rgba(252,176,69,0.25) 100%);;}
+	75%		{ background-image:  linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);;}
+	100%	{ background-image:  linear-gradient(90deg, rgba(131,58,180,0.8) 0%, rgba(253,29,29,0.5) 50%, rgba(252,176,69,0.3) 100%);;}
+}

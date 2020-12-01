@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/favicon.png"/>
+    <link rel="shortcut icon" href="assets/favicon.ico"/>
+    <title>GOSHROW</title>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.9.2/dist/tsparticles.min.js" integrity="sha256-5kED68Spy7K2CEbfu4CjV92DmZR5ZQFUoIR5qmPzZWg=" crossorigin="anonymous"></script>
+    <script src="jsonRandomizer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="loader.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Staatliches&family=Pacifico&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="blink-bg">
+            <div class="gif">
+                <img src="./assets/optimised.svg">
+            </div>
+        </div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <div class="front side">
+            <div class="content">
+                <img src="./assets/logo_size-removebg.png" class="logo"/>
+                <br><br>
+                <h1>Swapnil Ghosh</h1>
+                <!-- <p style="font-weight: bolder">&#661;&bull;&#7461;&bull;&#660;</p> -->
+                <p style="font-weight: bolder">&lceil;&bull;&bumpE;&bull;&rceil;</p>
+            </div>
+        </div>
+        <div class="back side">
+            <div class="content">
+                <h1>Reach Out:</h1>
+                <p><div>
+                    <span>
+                        <a href="https://github.com/GOSHROW">
+                            <i class="fa fa-github fa-3x">
+                            </i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="https://linkedin.com/in/goshrow">
+                            <i class="fa fa-linkedin fa-3x">
+                            </i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="https://www.instagram.com/swapnil._ghosh/">
+                            <i class="fa fa-instagram fa-3x">
+                            </i>
+                        </a>
+                    </span>
+                    &nbsp;
+                    <span>
+                        <a href="mailto:goshrow@gmail.com">
+                            <i class="fa fa-envelope-o fa-2x">
+                            </i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="mailto:goshrow@protonmail.com">
+                            <i class="fa fa-envelope fa-2x">
+                            </i>
+                        </a>
+                    </span>
+                </div></p>
+                <p style="color: cyan;">
+                    <span style="font-family: 'Pacifico', cursive; font-size: 35px; text-align: left">
+                        <a href="https://goshrow.tech/portfolio" target="blank">
+                            Portfolio
+                        </a>
+                    </span>
+                    &nbsp;
+                    <span style="font-family: 'Galada', cursive; font-size: 35px; text-align: right">
+                        <a href="https://goshrow.tech/blog" target="blank">
+                            Blog
+                        </a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }     
+        console.log("Tutorial Video: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        async function caller() {
+            while (true) {
+                var particles = randomizeParticles();
+                tsParticles.load('particles-js', particles);
+                $("#particles-js").fadeIn(1500);
+                console.log("Start");
+                await sleep(8000);
+                $("#particles-js").fadeOut(2000);
+                await sleep(1500);
+                console.log("End");
+                delete particles;
+            }
+        }
+        caller();
+    </script>
+</body>
+</html>
